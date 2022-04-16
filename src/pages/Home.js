@@ -7,7 +7,7 @@ function Home() {
         <div>
 
             <Typography style={{margin:30}} variant="h2">
-            React Barcode
+           Scan Pay Go Demo
             </Typography>
 
             <Grid container spacing={6}>
