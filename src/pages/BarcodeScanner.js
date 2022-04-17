@@ -23,7 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
-// Set Data in
+// Set Data in firebase
 function writeProductData(productId, name, description, price) {
   set(ref(db, 'products/' + productId), {
     name: name,
@@ -32,12 +32,13 @@ function writeProductData(productId, name, description, price) {
   });
 }
 //writeProductData("6221043040097", "ReparilGel", "PainRelieve", "50LE");
-
+// end of Set Data in firebase
 
 function BarcodeScanner() {
   const [data, setData] = React.useState("");
   const [product, setProduct] = React.useState("");
 
+  // retrieve Data from firebase
   useEffect(() => {
     if (!data) return;
     const dbRef = ref(getDatabase());
@@ -56,6 +57,8 @@ function BarcodeScanner() {
       });
   }, [data]);
 
+  
+
   return (
     <div>
       <Link to="/">
@@ -63,7 +66,7 @@ function BarcodeScanner() {
           <ArrowBack />
         </Fab>
       </Link>
-      <span>Scan Pay Go </span>
+      <span>Scan</span>
       <center>
         <div style={{ marginTop: 30 }}>
         <BarcodeScannerComponent
@@ -74,7 +77,7 @@ function BarcodeScanner() {
             }}
           />
         </div>
-
+        
       </center>
       <TextareaAutosize
         style={{ fontSize: 18, width: 320, height: 100, marginTop: 100 }}
@@ -83,14 +86,12 @@ function BarcodeScanner() {
         value={data}
       />
 
-    <TextareaAutosize
-        style={{ fontSize: 18, width: 320, height: 100, marginTop: 100 }}
-        rowsMax={4}
-        defaultValue={JSON.stringify(product)}
-        value={JSON.stringify(product)}
-      />
-
+    
+  {Object.entries(product).map(([key, value]) => <div> {key} : {value}</div>)}
+  
+    
     </div>
+   
 
   );
 }

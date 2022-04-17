@@ -16,7 +16,7 @@ integrate the Project with Firebase to retrieve Barcode's Product details.
 - __Clone this repo__:
 
   ```bash
-  $ git clone https://github.com/LintangWisesa/React-Barcode-Generator-Scanner.git
+  $ git clone https://github.com/Mhussein27/React-Barcode-Generator-Scanner.git
   $ npm i
   $ npm start
   ```
