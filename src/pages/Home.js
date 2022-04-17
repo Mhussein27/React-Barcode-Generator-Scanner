@@ -7,11 +7,11 @@ function Home() {
         <div>
 
             <Typography style={{margin:30}} variant="h2">
-           Scan Pay Go Demo
+           Scan Demo
             </Typography>
 
             <Grid container spacing={6}>
-                <Grid item xs={6}>
+                <Grid item sm={12} lg={6}>
                     <Link to="/barcode_generator">
                     <Button variant="contained" size="large" color="secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" style={{padding:30}} fill="currentColor" class="bi bi-upc" viewBox="0 0 16 16">
@@ -20,7 +20,7 @@ function Home() {
                     </Button>
                     </Link>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item sm={12} lg={6}>
                     <Link to="/barcode_scanner">
                     <Button variant="contained" size="large" color="secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" style={{padding:30}} fill="currentColor" class="bi bi-upc-scan" viewBox="0 0 16 16">
