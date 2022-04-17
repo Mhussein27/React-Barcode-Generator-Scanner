@@ -57,8 +57,6 @@ function BarcodeScanner() {
       });
   }, [data]);
 
-  
-
   return (
     <div>
       <Link to="/">
@@ -68,30 +66,27 @@ function BarcodeScanner() {
       </Link>
       <span>Scan</span>
       <center>
-        <div style={{ marginTop: 30 }}>
-        <BarcodeScannerComponent
-            width={500}
-            height={500}
+        <div style={{ marginTop: 10 }}>
+          <BarcodeScannerComponent
+            width={400}
+            height={400}
             onUpdate={(err, result) => {
               if (result) setData(result.text);
             }}
           />
         </div>
-        
+
       </center>
       <TextareaAutosize
-        style={{ fontSize: 18, width: 320, height: 100, marginTop: 100 }}
+        style={{ fontSize: 18, width: 320, height: 50, marginTop: 1 }}
         rowsMax={4}
         defaultValue={data}
         value={data}
       />
 
-    
-  {Object.entries(product).map(([key, value]) => <div> {key} : {value}</div>)}
-  
-    
+      {Object.entries(product).map(([key, value]) => <div> {key} : {value}</div>)}
+
     </div>
-   
 
   );
 }
