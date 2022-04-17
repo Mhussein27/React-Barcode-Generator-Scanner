@@ -3,6 +3,9 @@
 # React Barcode Scanner & Generator
 
 A simple React application to generate & scan barcode. 
+an Edit has been made to orignial project :
+Change the BarcodeScanner to react-qr-barcode-scanner
+integrate the Project with Firebase to retrieve Barcode's Product details.
 
 - __Demo__:
 
@@ -47,11 +50,18 @@ A simple React application to generate & scan barcode.
     $ npm i react-barcode
     ```
 
-- __Barcode Scanner: [quagga](https://github.com/michaeltrollan/quaggaJS#readme)__
+- __Barcode Scanner: [react-qr-barcode-scanner](https://www.npmjs.com/package/react-qr-barcode-scanner)__
 
-    Install `quagga`:
+    Install `react-qr-barcode-scanner`:
     ```bash
-    $ npm i quagga
+    $ npm i react-qr-barcode-scanner
+    ```
+
+- __Firebase Realtime DB: [react-barcode](https://firebase.google.com/docs/web/setup)__
+
+    Install `firebase`:
+    ```bash
+    $ npm install firebase
     ```
 
 - __Preview__
