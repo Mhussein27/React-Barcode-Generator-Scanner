@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import { Fab, TextareaAutosize } from '@material-ui/core'
-import { ArrowBack } from '@material-ui/icons'
+import React, { useEffect, useState } from "react";
+import { Fab, TextareaAutosize } from "@material-ui/core";
+import { ArrowBack } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import { initializeApp } from "firebase/app";
 
 import { getDatabase, ref, child, get, set } from "firebase/database";
 
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD6kYuYYV3eLAEsEB7DnAV5hh1kqrNazs0",
   authDomain: "scanpaygo-8fa82.firebaseapp.com",
-  databaseURL: "https://scanpaygo-8fa82-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL:
+    "https://scanpaygo-8fa82-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "scanpaygo-8fa82",
   storageBucket: "scanpaygo-8fa82.appspot.com",
   messagingSenderId: "937679103874",
-  appId: "1:937679103874:web:166c8eefd388042d6fd19b"
+  appId: "1:937679103874:web:166c8eefd388042d6fd19b",
 };
 
 // Initialize Firebase
@@ -25,10 +25,10 @@ const db = getDatabase();
 
 // Set Data in firebase
 function writeProductData(productId, name, description, price) {
-  set(ref(db, 'products/' + productId), {
+  set(ref(db, "products/" + productId), {
     name: name,
     description: description,
-    price: price
+    price: price,
   });
 }
 //writeProductData("6221043040097", "ReparilGel", "PainRelieve", "50LE");
@@ -75,19 +75,20 @@ function BarcodeScanner() {
             }}
           />
         </div>
-
       </center>
       <TextareaAutosize
         style={{ fontSize: 18, width: 320, height: 50, marginTop: 1 }}
-        rowsMax={4}
-        defaultValue={data}
+        maxRows={4}
         value={data}
       />
 
-      {Object.entries(product).map(([key, value]) => <div> {key} : {value}</div>)}
-
+      {Object.entries(product).map(([key, value]) => (
+        <div>
+          {" "}
+          {key} : {value}
+        </div>
+      ))}
     </div>
-
   );
 }
 export default BarcodeScanner;
