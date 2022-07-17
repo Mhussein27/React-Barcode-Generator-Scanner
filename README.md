@@ -1,5 +1,3 @@
-![simplinnovation](https://1.bp.blogspot.com/-wStk0VZDfMk/YCC0GIRPrDI/AAAAAAAAAGc/1yj7IOUedvoeO1CuCxq7ETLW0FqXni6mwCLcBGAsYHQ/s320/logotext.png)
-
 # React Barcode Scanner & Generator
 
 A simple React application to generate & scan barcode. 
